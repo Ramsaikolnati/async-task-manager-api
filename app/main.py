@@ -17,3 +17,5 @@ app.include_router(task_routes.router)
 @app.get("/")
 def root():
     return {"message":"Welcome to Async Task Manager API"}
+
+#included router
