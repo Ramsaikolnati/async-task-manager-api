@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  api:
+    build: .
+    working_dir: /code/aync-task-manager-api
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./:/code
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite+aiosqlite:///./tasks.db
+      - SECRET_KEY=change-me-in-prod

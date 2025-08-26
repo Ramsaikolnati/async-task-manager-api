@@ -34,3 +34,20 @@ Async Task Manager API — Python+ FastAPI + Celery + Redis + PostgreSQL + Docke
 git clone https://github.com/Ramsaikolnati/async-task-manager-api.git
 cd async-task-manager-api
 
+
+## Quickstart (SQLite)
+```bash
+# 1) Create .env (optional)
+echo SECRET_KEY=change-me > .env
+
+# 2) Run locally
+uvicorn app.main:app --reload
+
+# or with Docker
+docker compose up --build
+```
+
+- Open docs: http://localhost:8000/docs
+- Signup: POST /auth/signup
+- Login: POST /auth/login (use email as username in the OAuth2 form)
+- Use the Bearer token to call /tasks endpoints

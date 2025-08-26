@@ -1,20 +1,21 @@
-from pydantic import BaseModel
+from typing import Optional
+from pydantic import BaseModel, ConfigDict
 
 class TaskBase(BaseModel):
     title: str
-    description: str | None = None
+    description: Optional[str] = None
 
 class TaskCreate(TaskBase):
     pass
 
 class TaskUpdate(BaseModel):
-    title: str | None = None
-    description: str | None = None
-    completed: bool | None = None
+    title: Optional[str] = None
+    description: Optional[str] = None
+    completed: Optional[bool] = None
 
 class TaskResponse(TaskBase):
     id: int
-    completed: bool
+    completed: bool = False
+    owner_id: Optional[int] = None
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
