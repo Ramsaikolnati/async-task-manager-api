@@ -8,7 +8,7 @@ Async Task Manager API — Python+ FastAPI + Celery + Redis + PostgreSQL + Docke
 
 ## 🔧 Tech Stack
 - **Backend:** FastAPI (Python)
-- **Database:** SQL (PostgreSQL/MySQL/SQLite supported)
+- **Database:** SQL (PostgreSQL/SQLite supported)
 - **Authentication:** JWT-based auth with role-based access control
 - **Containerization:** Docker
 - **Documentation:** Swagger / OpenAPI
